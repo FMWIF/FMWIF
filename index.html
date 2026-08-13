@@ -111,6 +111,38 @@ footer{background:#071b35;color:white;text-align:center;padding:20px}
 .contact-links .email-link{background:#6c42b8}
 </style>
 
+
+<style id="floating-contact-links-style">
+.floating-contact-links{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:99999;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+.floating-contact-links a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-width:125px;
+    padding:12px 16px;
+    border-radius:999px;
+    color:#fff !important;
+    text-decoration:none !important;
+    font-weight:700;
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
+}
+.floating-contact-links .facebook-link{background:#1877f2}
+.floating-contact-links .whatsapp-link{background:#25d366}
+.floating-contact-links .email-link{background:#6c42b8}
+@media (max-width:600px){
+    .floating-contact-links{right:12px;bottom:12px}
+    .floating-contact-links a{min-width:110px;padding:10px 13px;font-size:14px}
+}
+</style>
+
 </head>
 <body>
 <header>
@@ -559,7 +591,7 @@ function closeImage() {
 <p>Email: <a href="mailto:Zarqazulifqar1986@gmail.com">Zarqazulifqar1986@gmail.com</a></p>
 <p>Phone / WhatsApp: <a href="https://wa.me/923147871868" target="_blank" rel="noopener noreferrer">00923147871868</a></p>
 <p><b>Address:</b> Sialkot, Pakistan</p>
-<div class="contact-links">
+<div class="floating-contact-links">
 <a class="facebook-link" href="https://www.facebook.com/profile.php?id=61592572019239" target="_blank" rel="noopener noreferrer">Facebook Page</a>
 <a class="whatsapp-link" href="https://wa.me/923147871868" target="_blank" rel="noopener noreferrer">WhatsApp</a>
 <a class="email-link" href="mailto:Zarqazulifqar1986@gmail.com">Email</a>
