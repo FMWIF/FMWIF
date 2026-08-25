@@ -391,6 +391,30 @@ footer::before{
  .fmwif-top-contact.floating-contact-links{top:8px !important;right:8px !important;left:auto !important;bottom:auto !important;}
 }
 </style>
+
+<style id="real-final-contact-fix">
+/* Real final fix: top right floating buttons */
+.floating-contact-links,
+.fmwif-top-contact {
+    position: fixed !important;
+    top: 15px !important;
+    right: 15px !important;
+    bottom: auto !important;
+    left: auto !important;
+    z-index: 2147483647 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+}
+.floating-contact-links a,
+.fmwif-top-contact a {
+    animation: realContactBlink 1.2s infinite !important;
+}
+@keyframes realContactBlink {
+    0%,100% { opacity:1; transform:scale(1); }
+    50% { opacity:.45; transform:scale(1.08); }
+}
+</style>
 </head>
 <body>
 <header>
@@ -659,6 +683,30 @@ body {
 }
 @media(max-width:700px){
  .fmwif-top-contact.floating-contact-links{top:8px !important;right:8px !important;left:auto !important;bottom:auto !important;}
+}
+</style>
+
+<style id="real-final-contact-fix">
+/* Real final fix: top right floating buttons */
+.floating-contact-links,
+.fmwif-top-contact {
+    position: fixed !important;
+    top: 15px !important;
+    right: 15px !important;
+    bottom: auto !important;
+    left: auto !important;
+    z-index: 2147483647 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+}
+.floating-contact-links a,
+.fmwif-top-contact a {
+    animation: realContactBlink 1.2s infinite !important;
+}
+@keyframes realContactBlink {
+    0%,100% { opacity:1; transform:scale(1); }
+    50% { opacity:.45; transform:scale(1.08); }
 }
 </style>
 </head>
