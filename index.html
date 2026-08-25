@@ -367,6 +367,30 @@ footer::before{
  animation:fmwifPulse 1.15s ease-in-out infinite, fmwifBlink 1.7s ease-in-out infinite !important;
 }
 </style>
+
+<style id="final-top-right-fix">
+.fmwif-top-contact.floating-contact-links{
+ position:fixed !important;
+ top:15px !important;
+ right:15px !important;
+ bottom:auto !important;
+ left:auto !important;
+ z-index:999999 !important;
+ display:flex !important;
+ flex-direction:column !important;
+ gap:8px !important;
+}
+.fmwif-top-contact.floating-contact-links a{
+ animation:finalBlink 1.2s infinite !important;
+}
+@keyframes finalBlink{
+ 0%,100%{opacity:1;transform:scale(1)}
+ 50%{opacity:.45;transform:scale(1.08)}
+}
+@media(max-width:700px){
+ .fmwif-top-contact.floating-contact-links{top:8px !important;right:8px !important;left:auto !important;bottom:auto !important;}
+}
+</style>
 </head>
 <body>
 <header>
@@ -612,6 +636,30 @@ body {
 <style id="contact-button-final-fix">
 .fmwif-top-contact{position:fixed!important;top:12px!important;right:18px!important;z-index:999999!important;}
 .fmwif-top-contact a{animation:fmwifPulse 1.15s ease-in-out infinite, fmwifBlink 1.7s ease-in-out infinite!important;}
+</style>
+
+<style id="final-top-right-fix">
+.fmwif-top-contact.floating-contact-links{
+ position:fixed !important;
+ top:15px !important;
+ right:15px !important;
+ bottom:auto !important;
+ left:auto !important;
+ z-index:999999 !important;
+ display:flex !important;
+ flex-direction:column !important;
+ gap:8px !important;
+}
+.fmwif-top-contact.floating-contact-links a{
+ animation:finalBlink 1.2s infinite !important;
+}
+@keyframes finalBlink{
+ 0%,100%{opacity:1;transform:scale(1)}
+ 50%{opacity:.45;transform:scale(1.08)}
+}
+@media(max-width:700px){
+ .fmwif-top-contact.floating-contact-links{top:8px !important;right:8px !important;left:auto !important;bottom:auto !important;}
+}
 </style>
 </head>
 
