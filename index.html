@@ -144,6 +144,170 @@ footer{background:#071b35;color:white;text-align:center;padding:20px}
 }
 </style>
 
+
+<style id="fmwif-modern-animation">
+/* ===== FMWIF MODERN ANIMATION LAYER ===== */
+html{scroll-behavior:smooth}
+body{overflow-x:hidden}
+
+/* Animated hero */
+header{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  background:linear-gradient(135deg,#f8dfe8,#fff8fb 45%,#f7efd4);
+  animation:heroFade .9s ease both;
+}
+header::before,header::after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:-1;
+}
+header::before{
+  width:280px;height:280px;right:-90px;top:-120px;
+  background:rgba(212,175,55,.20);
+  animation:floatOrb 7s ease-in-out infinite;
+}
+header::after{
+  width:220px;height:220px;left:-90px;bottom:-120px;
+  background:rgba(108,66,184,.12);
+  animation:floatOrb 9s ease-in-out infinite reverse;
+}
+header .logo{
+  transition:transform .5s ease,box-shadow .5s ease;
+  box-shadow:0 8px 30px rgba(20,42,72,.18);
+  animation:logoIn 1s cubic-bezier(.2,.8,.2,1) both;
+}
+header .logo:hover{transform:rotate(4deg) scale(1.06);box-shadow:0 14px 40px rgba(20,42,72,.28)}
+header h1{animation:titleIn .8s .15s both}
+header h2{animation:titleIn .8s .28s both}
+header p{animation:titleIn .8s .4s both}
+
+/* Sticky animated navigation */
+nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 4px 18px rgba(7,27,53,.14);
+  backdrop-filter:blur(8px);
+  transition:box-shadow .3s ease,transform .3s ease;
+}
+nav:hover{box-shadow:0 7px 24px rgba(7,27,53,.22)}
+
+/* Reveal cards/sections on scroll */
+.box,.partner-card,.speaker,.upcoming-event{
+  transition:transform .35s ease,box-shadow .35s ease,opacity .6s ease;
+}
+.box:hover{
+  transform:translateY(-5px);
+  box-shadow:0 14px 32px rgba(20,42,72,.12);
+}
+.partner-card:hover{
+  transform:translateY(-8px) scale(1.015);
+  box-shadow:0 18px 36px rgba(20,42,72,.16);
+}
+.partner-card img{transition:transform .45s ease}
+.partner-card:hover img{transform:scale(1.07)}
+
+.speaker{
+  transition:transform .4s ease,box-shadow .4s ease;
+  box-shadow:0 7px 20px rgba(20,42,72,.12);
+}
+.speaker:hover{transform:translateY(-8px) scale(1.025);box-shadow:0 16px 34px rgba(20,42,72,.20)}
+
+h2{transition:text-shadow .35s ease,transform .35s ease}
+h2:hover{transform:translateX(3px);text-shadow:0 5px 18px rgba(212,175,55,.28)}
+
+.contact-links a,.floating-contact-links a{
+  transition:transform .25s ease,box-shadow .25s ease,filter .25s ease;
+}
+.contact-links a:hover,.floating-contact-links a:hover{
+  transform:translateY(-3px) scale(1.03);
+  box-shadow:0 8px 18px rgba(0,0,0,.22);
+  filter:brightness(1.06);
+}
+
+/* Signature polish */
+.signature-image{
+  transition:transform .5s ease,filter .5s ease;
+}
+.signature-image:hover{transform:scale(1.025) rotate(-.5deg);filter:drop-shadow(0 10px 18px rgba(20,42,72,.18))}
+
+/* Floating contact buttons */
+.floating-contact-links{animation:contactIn .8s 1s both}
+.floating-contact-links a:nth-child(1){animation:buttonFloat 4s ease-in-out infinite}
+.floating-contact-links a:nth-child(2){animation:buttonFloat 4s .7s ease-in-out infinite}
+.floating-contact-links a:nth-child(3){animation:buttonFloat 4s 1.4s ease-in-out infinite}
+
+/* Footer */
+footer{position:relative;overflow:hidden}
+footer::before{
+  content:"";
+  position:absolute;left:-20%;top:0;width:40%;height:2px;
+  background:linear-gradient(90deg,transparent,#d4af37,transparent);
+  animation:footerShine 4s linear infinite;
+}
+
+/* Accessible reduced motion */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    scroll-behavior:auto!important;
+    transition-duration:.01ms!important;
+  }
+}
+
+@keyframes heroFade{from{opacity:0}to{opacity:1}}
+@keyframes logoIn{from{opacity:0;transform:scale(.75) rotate(-8deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+@keyframes titleIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes floatOrb{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(-18px,22px,0)}}
+@keyframes contactIn{from{opacity:0;transform:translateX(35px)}to{opacity:1;transform:translateX(0)}}
+@keyframes buttonFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes footerShine{0%{left:-40%}100%{left:120%}}
+</style>
+
+
+<style id="fmwif-upcoming-two-posters">
+.upcoming-posters{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px;
+  align-items:stretch;
+  max-width:1200px;
+  margin:18px auto 0;
+}
+.upcoming-poster-card{
+  background:#fff;
+  border:2px solid rgba(212,175,55,.65);
+  border-radius:18px;
+  padding:10px;
+  box-shadow:0 10px 30px rgba(7,27,53,.15);
+  overflow:hidden;
+  transition:transform .4s ease,box-shadow .4s ease;
+}
+.upcoming-poster-card:hover{
+  transform:translateY(-7px) scale(1.01);
+  box-shadow:0 18px 38px rgba(7,27,53,.24);
+}
+.upcoming-poster-card img{
+  width:100%;
+  height:auto;
+  max-height:760px;
+  object-fit:contain;
+  display:block;
+  border-radius:12px;
+  cursor:pointer;
+  animation:eventPulse 3s ease-in-out infinite;
+}
+@media(max-width:800px){
+  .upcoming-posters{grid-template-columns:1fr;gap:18px}
+  .upcoming-poster-card img{max-height:none}
+}
+</style>
+
 </head>
 <body>
 <header>
@@ -173,12 +337,18 @@ footer{background:#071b35;color:white;text-align:center;padding:20px}
 
 <div class="box upcoming-event">
   <h2>✨ Upcoming Event ✨</h2>
-  <img
-    class="upcoming-event-image"
-    src="3d376b2d-0eb9-44a3-9b61-7a8fbdda48f0.png"
-    alt="Upcoming Event"
-    onclick="openImage('3d376b2d-0eb9-44a3-9b61-7a8fbdda48f0.png')"
-  >
+  <div class="upcoming-posters">
+    <div class="upcoming-poster-card">
+      <img src="IMG-20260825-WA0023.jpg"
+           alt="Upcoming Event Poster 1"
+           onclick="openImage('IMG-20260825-WA0023.jpg')">
+    </div>
+    <div class="upcoming-poster-card">
+      <img src="IMG-20260825-WA0003.jpg"
+           alt="Upcoming Event Poster 2"
+           onclick="openImage('IMG-20260825-WA0003.jpg')">
+    </div>
+  </div>
 </div>
 
   <!DOCTYPE html>
@@ -400,6 +570,18 @@ body {
         Past Events
     </h1>
 
+<div class="card">
+  <img class="card-image"
+       src="3d376b2d-0eb9-44a3-9b61-7a8fbdda48f0.png"
+       alt="Previous Upcoming Event"
+       onclick="openImage('3d376b2d-0eb9-44a3-9b61-7a8fbdda48f0.png')">
+  <div class="card-content">
+    <h2>Previous Event</h2>
+    <p>Previous FMWIF event poster.</p>
+  </div>
+</div>
+
+
     <p>
         Explore highlights and event posters from our previous
         webinars, workshops and academic learning sessions.
@@ -573,9 +755,6 @@ function closeImage() {
 </script>
 
 
-</body>
-
-</html>
 <h2>Founder Message</h2>
 <p>Welcome to Future Minds World Innovative Forum (FMWIF). Our vision is to create a global platform where researchers, innovators and thinkers can connect, share knowledge and contribute to shaping the future.</p>
 </div>
@@ -643,5 +822,56 @@ function closeImage() {
 </section>
 
 <footer>FMWIF - Future Minds World Innovative Forum</footer>
+
+<script id="fmwif-scroll-animation">
+/* ===== FMWIF SCROLL REVEAL ===== */
+(function(){
+  const items = document.querySelectorAll(
+    "section, .box, .partner-card, .speaker, .upcoming-event"
+  );
+
+  items.forEach((el,i)=>{
+    el.classList.add("fmwif-reveal");
+    el.style.setProperty("--reveal-delay", Math.min((i%5)*70,280) + "ms");
+  });
+
+  const style=document.createElement("style");
+  style.textContent=`
+    .fmwif-reveal{
+      opacity:0;
+      transform:translateY(28px);
+    }
+    .fmwif-reveal.fmwif-visible{
+      opacity:1;
+      transform:translateY(0);
+      transition:opacity .7s ease var(--reveal-delay),
+                 transform .7s cubic-bezier(.2,.75,.2,1) var(--reveal-delay);
+    }
+    @media (prefers-reduced-motion:reduce){
+      .fmwif-reveal,.fmwif-reveal.fmwif-visible{
+        opacity:1;transform:none;transition:none;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+
+  if(!("IntersectionObserver" in window)){
+    items.forEach(el=>el.classList.add("fmwif-visible"));
+    return;
+  }
+
+  const observer=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("fmwif-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:.10,rootMargin:"0px 0px -45px 0px"});
+
+  items.forEach(el=>observer.observe(el));
+})();
+</script>
+
 </body>
 </html>
