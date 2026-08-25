@@ -308,6 +308,41 @@ footer::before{
 }
 </style>
 
+
+<style id="fmwif-top-contact-buttons">
+.fmwif-top-contact{
+ position:fixed!important; top:12px!important; right:18px!important;
+ z-index:10001!important; display:flex!important; gap:8px!important;
+ align-items:center!important;
+ animation:fmwifBlink 1.7s ease-in-out infinite!important;
+}
+.fmwif-top-contact a{
+ display:inline-flex!important; align-items:center!important;
+ justify-content:center!important; min-height:42px!important;
+ padding:9px 13px!important; border-radius:999px!important;
+ font-weight:700!important; text-decoration:none!important;
+ box-shadow:0 5px 16px rgba(0,0,0,.22)!important;
+ animation:fmwifPulse 1.15s ease-in-out infinite!important;
+}
+.fmwif-top-contact a:nth-child(2){animation-delay:.18s!important}
+.fmwif-top-contact a:nth-child(3){animation-delay:.36s!important}
+@keyframes fmwifBlink{
+ 0%,100%{opacity:1;filter:brightness(1)}
+ 50%{opacity:.38;filter:brightness(1.35)}
+}
+@keyframes fmwifPulse{
+ 0%,100%{transform:scale(1)}
+ 50%{transform:scale(1.08)}
+}
+@media(max-width:700px){
+ .fmwif-top-contact{top:8px!important;right:8px!important;left:8px!important;justify-content:center!important;gap:5px!important}
+ .fmwif-top-contact a{min-height:36px!important;padding:7px 9px!important;font-size:12px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .fmwif-top-contact,.fmwif-top-contact a{animation:none!important}
+}
+</style>
+
 </head>
 <body>
 <header>
@@ -771,7 +806,7 @@ function closeImage() {
 <p>Email: <a href="mailto:Zarqazulifqar1986@gmail.com">Zarqazulifqar1986@gmail.com</a></p>
 <p>Phone / WhatsApp: <a href="https://wa.me/923147871868" target="_blank" rel="noopener noreferrer">00923147871868</a></p>
 <p><b>Address:</b> Sialkot, Pakistan</p>
-<div class="floating-contact-links">
+<div class="fmwif-top-contact floating-contact-links">
 <a class="facebook-link" href="https://www.facebook.com/profile.php?id=61592572019239" target="_blank" rel="noopener noreferrer">Facebook Page</a>
 <a class="whatsapp-link" href="https://wa.me/923147871868" target="_blank" rel="noopener noreferrer">WhatsApp</a>
 <a class="email-link" href="mailto:Zarqazulifqar1986@gmail.com">Email</a>
