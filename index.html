@@ -114,27 +114,24 @@ footer{background:#071b35;color:white;text-align:center;padding:20px}
 
 
 <style id="floating-contact-links-style">
+/* ONLY ONE floating contact control: fixed at the top-right */
 .floating-contact-links{
-    position:fixed;
-    right:20px;
-    top:20px;
-    bottom:auto;
-    z-index:99999;
-    display:flex;
-    flex-direction:column;
-    gap:10px;
+ position:fixed !important;
+ top:20px !important;
+ right:20px !important;
+ bottom:auto !important;
+ left:auto !important;
+ z-index:2147483647 !important;
+ display:flex !important;
+ flex-direction:column !important;
+ gap:10px !important;
+ pointer-events:auto !important;
 }
 .floating-contact-links a{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    min-width:125px;
-    padding:12px 16px;
-    border-radius:999px;
-    color:#fff !important;
-    text-decoration:none !important;
-    font-weight:700;
-    box-shadow:0 4px 12px rgba(0,0,0,.25);
+ display:flex;align-items:center;justify-content:center;
+ min-width:125px;padding:12px 16px;border-radius:999px;
+ color:#fff !important;text-decoration:none !important;font-weight:700;
+ box-shadow:0 4px 12px rgba(0,0,0,.25);
 }
 .floating-contact-links .facebook-link{background:#1877f2}
 .floating-contact-links .whatsapp-link{background:#25d366}
@@ -144,11 +141,8 @@ footer{background:#071b35;color:white;text-align:center;padding:20px}
 .floating-contact-links a{animation:contactBlink 1.8s ease-in-out infinite,contactPulse 2.8s ease-in-out infinite;will-change:transform,opacity,filter}
 .floating-contact-links a:nth-child(2){animation-delay:.35s,.35s}
 .floating-contact-links a:nth-child(3){animation-delay:.7s,.7s}
-@media (max-width:600px){
-    .floating-contact-links{right:10px;top:10px;bottom:auto}
-    .floating-contact-links a{min-width:110px;padding:10px 13px;font-size:14px}
-}
-</style>
+@media(max-width:600px){.floating-contact-links{top:10px !important;right:10px !important;bottom:auto !important}.floating-contact-links a{min-width:110px;padding:10px 13px;font-size:14px}}
+</style>>
 
 
 <style id="fmwif-modern-animation">
@@ -777,11 +771,7 @@ function closeImage() {
 <p>Email: <a href="mailto:Zarqazulifqar1986@gmail.com">Zarqazulifqar1986@gmail.com</a></p>
 <p>Phone / WhatsApp: <a href="https://wa.me/923147871868" target="_blank" rel="noopener noreferrer">00923147871868</a></p>
 <p><b>Address:</b> Sialkot, Pakistan</p>
-<div class="floating-contact-links">
-<a class="facebook-link" href="https://www.facebook.com/profile.php?id=61592572019239" target="_blank" rel="noopener noreferrer">Facebook Page</a>
-<a class="whatsapp-link" href="https://wa.me/923147871868" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-<a class="email-link" href="mailto:Zarqazulifqar1986@gmail.com">Email</a>
-</div>
+
 </div>
 </section>
 
@@ -879,5 +869,11 @@ function closeImage() {
 })();
 </script>
 
+
+<div class="floating-contact-links">
+<a class="facebook-link" href="https://www.facebook.com/profile.php?id=61592572019239" target="_blank" rel="noopener noreferrer">Facebook Page</a>
+<a class="whatsapp-link" href="https://wa.me/923147871868" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+<a class="email-link" href="mailto:Zarqazulifqar1986@gmail.com">Email</a>
+</div>
 </body>
 </html>
