@@ -117,7 +117,8 @@ footer{background:#071b35;color:white;text-align:center;padding:20px}
 .floating-contact-links{
     position:fixed;
     right:20px;
-    bottom:20px;
+    top:20px;
+    bottom:auto;
     z-index:99999;
     display:flex;
     flex-direction:column;
@@ -138,8 +139,13 @@ footer{background:#071b35;color:white;text-align:center;padding:20px}
 .floating-contact-links .facebook-link{background:#1877f2}
 .floating-contact-links .whatsapp-link{background:#25d366}
 .floating-contact-links .email-link{background:#6c42b8}
+@keyframes contactBlink{0%,100%{opacity:1;filter:brightness(1)}50%{opacity:.72;filter:brightness(1.18)}}
+@keyframes contactPulse{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-4px) scale(1.04)}}
+.floating-contact-links a{animation:contactBlink 1.8s ease-in-out infinite,contactPulse 2.8s ease-in-out infinite;will-change:transform,opacity,filter}
+.floating-contact-links a:nth-child(2){animation-delay:.35s,.35s}
+.floating-contact-links a:nth-child(3){animation-delay:.7s,.7s}
 @media (max-width:600px){
-    .floating-contact-links{right:12px;bottom:12px}
+    .floating-contact-links{right:10px;top:10px;bottom:auto}
     .floating-contact-links a{min-width:110px;padding:10px 13px;font-size:14px}
 }
 </style>
